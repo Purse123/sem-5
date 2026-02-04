@@ -1,1 +1,1 @@
-rm *~ *.ali *.o main iterative 
+rm *~ *.ali *.o main iterative b~*

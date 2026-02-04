@@ -2,20 +2,6 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 package body Iterative is
-   -- ######################################################
-   --                  Member
-   -- ######################################################
-   -- Page no: 101
-   type Int_Array is 
-     array (Positive range <>) of Integer;
-   
-   -- ######################################################
-   --                  Methods
-   -- ######################################################
-   --@method: GCD
-   --@breif: To find gcd
-   --@param: a:int, b:int
-   --@reutrn: int
    function Gcd (A, B : Integer) return Integer is
       Temp: Integer;
       X: Integer := A;
@@ -32,9 +18,6 @@ package body Iterative is
       return X;
    end Gcd;
    
-   --@method: Fibonacci
-   --@breif: print nth sequence of fib
-   --@param: n:int nth term of seq
    procedure Fibonacci (N : Integer) is
       A: Integer := 0;
       B: Integer := 1;
@@ -56,13 +39,31 @@ package body Iterative is
       New_Line;
    end Fibonacci;
    
-   --@method: SequentialSearch
-   --@breif: Search array
-   --@param: arr:(int*)array, key:int _search_item_
-   --@reutrn: int _index_
-   function SequentialSearch (Key : constant Integer) is
+   function SequentialSearch (Arr: Int_Array; Key: Integer) return Integer is
    begin
+      for I in Arr'Range loop
+	 if Arr(I) = Key then return I; end if;
+      end loop;
+      
+      return -1;
    end SequentialSearch;
-
+   
+   procedure Swap (A, B : in out Integer) is
+      Temp : Integer := A;
+   begin
+      A := B;
+      B := Temp;
+   end Swap;
+   
+   procedure BubbleSort (Arr : in out Int_Array) is
+   begin
+      for J in 1 .. Arr'Last - 1 loop
+	 for I in Arr'First..Arr'Last - J loop
+	    if Arr(I) > Arr(I + 1) then 
+	       Swap(Arr(I), Arr(I + 1)); 
+	    end if;
+	 end loop;
+      end loop;
+   end BubbleSort;
+   
 end Iterative;
-
