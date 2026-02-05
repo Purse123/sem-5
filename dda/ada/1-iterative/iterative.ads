@@ -6,6 +6,14 @@ package Iterative is
    type Int_Array is array (Positive range <>) of Integer;
    
    -- ######################################################
+   --                  View
+   -- ######################################################
+   --@method: DisplayArr
+   --@param: Int_Array
+   --@note: No '\n' trailing
+   procedure DisplayArr (Arr : Int_Array);
+   
+   -- ######################################################
    --                  Methods
    -- ######################################################
    --@method: GCD
@@ -46,8 +54,9 @@ package Iterative is
    --  Arr : out Int_Array     -- write-only **uninitialized output buffer**
    procedure InsertionSort (Arr : in out Int_Array);
 
-   procedure DisplayArr (Arr : Int_Array);
 private
-   -- vector data_
+   -- XOR swap doesn't seem to work
    procedure Swap (A, B : in out Integer);
+   
+   -- vector data_
 end Iterative;
