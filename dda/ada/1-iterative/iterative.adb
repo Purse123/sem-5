@@ -66,4 +66,50 @@ package body Iterative is
       end loop;
    end BubbleSort;
    
+   procedure SelectionSort (Arr : in out Int_Array) is
+      Min_Idx : Integer;
+   begin
+      for J in Arr'First .. Arr'Last - 1 loop
+	 Min_Idx := J;
+	 
+	 -- Min handler
+	 for I in J + 1 .. Arr'Last loop
+	    if Arr(I) < Arr(Min_Idx) then
+	       Min_Idx:= I;
+	    end if;
+	 end loop;
+	 
+	 if Min_Idx /= J then Swap(Arr(J), Arr(Min_Idx)); end if;
+      end loop;
+   end SelectionSort;
+   
+   procedure InsertionSort (Arr : in out Int_Array) is
+      Key : Integer;
+      J   : Integer;
+   begin
+      for I in Arr'First + 1 .. Arr'Last loop
+	 Key := Arr(I);
+	 J := I - 1;
+	 
+	 while J >= Arr'First and then Arr(J) > Key loop
+	    Arr(J + 1) := Arr(J);
+	    J := J - 1;
+	 end loop;
+	 
+	 Arr(J + 1) := Key;
+      end loop;
+   end InsertionSort;
+   
+   procedure DisplayArr (Arr : Int_Array) is
+   begin
+      Put("[");
+      
+      for I in Arr'Range loop
+	 Put(Arr(I), Width => 3);
+	 if I < Arr'Last then Put(", "); end if;
+      end loop;
+      
+      Put("]");
+   end DisplayArr;
+   
 end Iterative;

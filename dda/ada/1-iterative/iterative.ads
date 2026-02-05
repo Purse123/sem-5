@@ -32,6 +32,21 @@ package Iterative is
    --  Arr : out Int_Array     -- write-only **uninitialized output buffer**
    procedure BubbleSort (Arr : in out Int_Array);
    
+   --@method: SelectionSort
+   --@breif: Sort array O(n**2)
+   --@param: 
+   --  Arr : in Int_Array      -- read-only  **default: const&**
+   --  Arr : out Int_Array     -- write-only **uninitialized output buffer**
+   procedure SelectionSort (Arr : in out Int_Array);
+   
+   --@method: InsertionSort
+   --@breif: Sort array O(n**2)
+   --@param: 
+   --  Arr : in Int_Array      -- read-only  **default: const&**
+   --  Arr : out Int_Array     -- write-only **uninitialized output buffer**
+   procedure InsertionSort (Arr : in out Int_Array);
+
+   procedure DisplayArr (Arr : Int_Array);
 private
    -- vector data_
    procedure Swap (A, B : in out Integer);
