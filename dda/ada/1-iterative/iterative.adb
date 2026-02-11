@@ -2,19 +2,35 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 package body Iterative is
+   procedure Get_Step_Count is begin Put_Line(Integer'Image(Count_Step)); 
+   end Get_Step_Count;
+   procedure Reset_Step_Count is begin Count_Step := 0; end Reset_Step_Count;
+
    function Gcd (A, B : Integer) return Integer is
       Temp: Integer;
       X: Integer := A;
       Y: Integer := B;
    begin
-      if X < 0 then X := -X; end if;
-      if Y < 0 then Y := -Y; end if;
+      if X < 0 then X := -X; Count_Step := Count_Step + 2;
+      else Count_Step := Count_Step + 1; end if;
+      
+      if Y < 0 then Y := -Y; Count_Step := Count_Step + 2; 
+      else Count_Step := Count_Step + 1; end if;
       
       while Y /= 0 loop
+	 Count_Step := Count_Step + 1;	--  loop condition check
+	 
 	 Temp := X mod Y;
+	 Count_Step := Count_Step + 1;
+	 
 	 X := Y;
+	 Count_Step := Count_Step + 1;
+	 
 	 Y := Temp;
+	 Count_Step := Count_Step + 1;
       end loop;
+      Count_Step := Count_Step + 1; 	--  false condition check
+      
       return X;
    end Gcd;
    
@@ -23,17 +39,34 @@ package body Iterative is
       B: Integer := 1;
       Temp: Integer;
    begin
-      if N <= 0 then Put_Line("Expected input: unsigned number"); return; end if;
+      if N <= 0 then 
+	 Count_Step := Count_Step + 1;
+	 Put_Line("Expected input: unsigned number"); 
+	 return; 
+      end if;
       
       Put("Fibonacci sequence upto " & Integer'Image(N) & ": ");
-      if N >= 1 then Put(Integer'Image(A)); end if;
-      if N >= 2 then Put(Integer'Image(B)); end if;
+      if N >= 1 then 
+	 Count_Step := Count_Step + 1;
+	 Put(Integer'Image(A)); 
+      end if;
+      if N >= 2 then 
+	 Count_Step := Count_Step + 1;
+	 Put(Integer'Image(B)); 
+      end if;
       
       for I in 3 .. N loop
+	 Count_Step := Count_Step + 1;
+	 
 	 Temp := A + B;
+	 Count_Step := Count_Step + 1;
+	 
 	 Put(Integer'Image(Temp));
+	 
 	 A := B;
+	 Count_Step := Count_Step + 1;
 	 B := Temp;
+	 Count_Step := Count_Step + 1;
       end loop;
       
       New_Line;

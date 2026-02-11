@@ -2,6 +2,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Strings; use Ada.Strings;
 with Ada.Strings.Fixed; use Ada.Strings.Fixed;
+with Ada.Strings.Maps; use Ada.Strings.Maps;
 with Iterative; use Iterative;
 
 procedure Main is
@@ -36,6 +37,8 @@ begin
    Put_Line("GCD(" & Trim(Integer'Image(GCD_A), Left) & "," 
      & Trim(Integer'Image(GCD_B), Left) & "): " 
      & Integer'Image(Gcd(GCD_A, GCD_B)));
+   Get_Step_Count;
+   Reset_Step_Count;
    New_Line;
    
    -- Sequential search

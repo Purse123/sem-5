@@ -13,6 +13,12 @@ package Iterative is
    --@note: No '\n' trailing
    procedure DisplayArr (Arr : Int_Array);
    
+   -- Function to get the step count
+   procedure Get_Step_Count;
+   
+   -- Procedure to reset the step counter
+   procedure Reset_Step_Count;
+
    -- ######################################################
    --                  Methods
    -- ######################################################
@@ -53,10 +59,10 @@ package Iterative is
    --  Arr : in Int_Array      -- read-only  **default: const&**
    --  Arr : out Int_Array     -- write-only **uninitialized output buffer**
    procedure InsertionSort (Arr : in out Int_Array);
-
 private
    -- XOR swap doesn't seem to work
    procedure Swap (A, B : in out Integer);
    
-   -- vector data_
+   Count_Step : Integer := 0;
+
 end Iterative;
