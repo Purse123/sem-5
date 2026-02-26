@@ -15,46 +15,76 @@
 #include <string.h>
 
 #define MAX_LEN 100
-#define MAX_RAILS 3
+#define NUM_RAIL 3
 /* cycle = 2 * (no_rails - 1); */
 /* rail = i % cycle */
 /* if (rail >= numRails) rail = cycle - rail */
 
-void rail_fence(char* msg, int no_rail, char rails[MAX_RAILS][MAX_LEN]) {
+void encrypt(char* msg, int no_rails, char rails[NUM_RAIL][MAX_LEN], int rail_state[]) {
   int len = strlen(msg);
-  int cycle = 2 * (no_rail - 1);
-  int rail_state[MAX_RAILS] = {0};
+  int cycle = 2 * (no_rails - 1);
+  
+  // Initialize rail_state
+  for (int r = 0; r < no_rails; r++) { rail_state[r] = 0; }
   
   for (int i = 0; i < len; ++i) {
-    int rail = ((i % cycle) + cycle) % cycle;
-
-    if (rail >= no_rail) { rail = cycle - rail; }
+    int rail = i % cycle;
+    if (rail >= no_rails) { rail = cycle - rail; }
     
     rails[rail][rail_state[rail]++] = msg[i];
   }
-
-  for (int r = 0; r < no_rail; r++) {
-    rails[r][rail_state[r]] = '\0';
+  
+  // Null terminate each rail
+  for (int r = 0; r < no_rails; r++) { 
+    rails[r][rail_state[r]] = '\0'; 
   }
 }
 
-int main() {
-  char *msg = "PIERCE"; 
-  char res[MAX_RAILS][MAX_LEN];
-  rail_fence(msg, 3, res);
+void decrypt(char* msg, int no_rails, char rails[NUM_RAIL][MAX_LEN], int rail_state[]) {
+  int read_pos[NUM_RAIL];
+  for (int r = 0; r < no_rails; r++) { read_pos[r] = 0; }
+  
+  int len = 0;
+  for (int r = 0; r < no_rails; r++) { len += rail_state[r]; }
+  
+  int cycle = 2 * (no_rails - 1);
+  int msg_idx = 0;
 
+  for (int i = 0; i < len; ++i) {
+    int rail = i % cycle;
+    if (rail >= no_rails) rail = cycle - rail;
+    
+    msg[msg_idx++] = rails[rail][read_pos[rail]++];
+  }
+  msg[msg_idx] = '\0';
+}
+
+int main() {
+  char msg[] = "PIERCE"; 
+  char rails[NUM_RAIL][MAX_LEN] = {0};
+  int rail_state[NUM_RAIL] = {0};
+  char cipher_text[MAX_LEN] = {0};
+  
   printf("=====================================\n");
   printf("Original plain text: %s\n", msg);
   printf("=====================================\n");
-  printf("Encrypt:\n");
-  for (int r = 0; r < 3; r++) { printf("Rail %d: %s\n", r, res[r]); }
 
-  printf("Output cipher text: ");
-  for (int r = 0; r < 3; r++) { printf("%s", res[r]); } printf("\n");
+  printf("Encrypt:\n");
+  encrypt(msg, NUM_RAIL, rails, rail_state);
+
+  // display rails
+  for (int r = 0; r < NUM_RAIL; r++) {
+    printf("Rail %d: %s\n", r, rails[r]);
+  }
+
+  strcpy(cipher_text, "");
+  for (int r = 0; r < NUM_RAIL; r++) { strcat(cipher_text, rails[r]); }
+  
+  printf("Output cipher test: %s\n", cipher_text);
+  
   printf("=====================================\n");
-  printf("Decrypt:\n");
-  rail_fence_decrypt(msg, 3, res);
-  for (int r = 0; r < 3; r++) { printf("Rail %d: %s\n", r, res[r]); }
+  decrypt(msg, NUM_RAIL, rails, rail_state);
+  printf("Decrypt: %s\n", msg);
   
   return 0;
 }
