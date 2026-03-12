@@ -22,6 +22,7 @@ int main() {
   caesar(c, shift);
   printf("%s\n", c);
 
+  // decrypt
   caesar(c, -shift);
   printf("%s\n", c);
   return 0;
