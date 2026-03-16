@@ -1,16 +1,18 @@
 package greedy is
    -- ######################################################
-   --                  Member
+   --                  DATA TYPES
    -- ######################################################
-   -- Page no: 101
-   type Int_Array is array (Positive range <>) of Integer;
-   
-   -- Chapter:6, pg-no:65
-   type MinMax_Res is record
-      Min, Max : Integer;
+   -- record defn
+   type Item is record
+      Weight : Float;
+      Value : Float;
+      Ratio : Float;
+      Index : Integer;
    end record;
-   -- seems like this Scheiße
-   -- type Point (X, Y : Natural) is record null; end record; -- pg: 102
+     
+   -- Arr defn
+   type Int_Array is array (Positive range <>) of Integer;
+   type Item_Array is array (Positive range <>) of Item;
    
    -- ######################################################
    --                  View
@@ -30,20 +32,15 @@ package greedy is
    -- Procedure to reset the step counter
    procedure Reset_Step_Count;
 
-   --@method: BinarySearch
-   --@breif: Searching algo
-   --@param: {Arr}:Array,
-   --    {left, right, key}:int
-   --@return: int
-   function BinarySearch (Arr : Int_Array; Left, Right, Key: Integer) return Integer;
+   --@method: Knapsack_Fractional
+   --@breif: Greedy
+   --@param: {Items}: Item_Array, Capactiy: Float
+   --@return: Float
+   --  function Knapsack_Fractional (Items: in out Item_Array; Capacity: Float) return Float;
    
-   --@method: MinMax
-   --@breif: Find the Min and Max by using partitioning like merge sort
-   --@param: {Arr}:Array,
-   --    {left, right, key}:int
-   --@return: @{MinMax_Res}: record
-   --@see: @member
-   function MinMax (Arr : Int_Array; Left, Right : Integer) return MinMax_Res;
 private
    Count_Step : Integer := 0;
+   
+   --@breif: Sort item by ratio *desc*
+   procedure SortByRatio(Items: in out Item_Array);
 end greedy;

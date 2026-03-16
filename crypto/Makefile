@@ -16,6 +16,8 @@ q5: 5-euclidean.c
 	$(CC) $^ -o $@ $(CFLAGS)
 q6: 6-ext_euclidean.c
 	$(CC) $^ -o $@ $(CFLAGS)
+q7: 7-rsa.c
+	$(CC) $^ -o $@ $(CFLAGS)
 
 clean:
-	rm *~ q1 q2 q3 q4 q5 q6
+	rm *~ q1 q2 q3 q4 q5 q6 q7
