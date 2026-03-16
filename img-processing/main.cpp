@@ -1,6 +1,8 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 
+#define IMG_FILE "doom.png"
+
 int main() {
   // #############################################
   //              OpenCV stuffs
@@ -13,7 +15,7 @@ int main() {
      @param filename Name of the file to be loaded.
      @param flags Flag that can take values cv::ImreadModes, default cv::IMREAD_COLOR_BGR.
   */
-  cv::Mat img = cv::imread("doom.png", cv::IMREAD_COLOR_BGR);
+  cv::Mat img = cv::imread(IMG_FILE, cv::IMREAD_COLOR_BGR);
   if (img.empty()) {
     std::cerr << "Failed to load image" << std::endl;
     return -1;
@@ -55,8 +57,8 @@ int main() {
       uchar G = pixel_matrix[idx + 1];
       uchar R = pixel_matrix[idx + 2];
 
-      int intensity = (0.114f * B + 0.587f * G + 0.299f * R);
-      // / 1000;
+      // int intensity = (0.114f * B + 0.587f * G + 0.299f * R);
+      int intensity = (0.5f * B + 0.5f * G + 0.5f * R);
       
       gray_matrix[r * cols + c] = intensity;
     }
