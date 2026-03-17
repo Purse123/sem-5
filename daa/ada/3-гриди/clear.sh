@@ -1,1 +1,1 @@
-rm *~ *.ali *.o main DivideConquer b~*
+rm *~ *.ali *.o main b~*

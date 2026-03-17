@@ -31,16 +31,16 @@ package greedy is
    
    -- Procedure to reset the step counter
    procedure Reset_Step_Count;
+   
+   --@breif: Sort item by ratio *desc*
+   procedure SortByRatio(Items: in out Item_Array);
 
    --@method: Knapsack_Fractional
    --@breif: Greedy
    --@param: {Items}: Item_Array, Capactiy: Float
    --@return: Float
-   --  function Knapsack_Fractional (Items: in out Item_Array; Capacity: Float) return Float;
+   function Knapsack_Fractional (Items: in out Item_Array; Capacity: Float) return Float;
    
 private
    Count_Step : Integer := 0;
-   
-   --@breif: Sort item by ratio *desc*
-   procedure SortByRatio(Items: in out Item_Array);
 end greedy;

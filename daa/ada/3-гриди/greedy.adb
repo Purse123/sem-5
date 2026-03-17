@@ -32,5 +32,17 @@ package body greedy is
       end loop;
    end SortByRatio;
    
+   function Knapsack_Fractional (Items: in out Item_Array; Capacity: Float) return Float is
+      Temp : Float := 5.0;
+   begin
+      for I in Items'Range loop
+	 Items(I).Ratio := Items(I).Value / Items(I).Weight;
+	 Items(I).Index := I;
+      end loop;
+      
+      SortByRatio(Items);
+      
+      return Temp;
+   end Knapsack_Fractional;
    
 end greedy;

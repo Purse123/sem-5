@@ -12,6 +12,7 @@ procedure Main is
      (Weight => 20.0, Value => 100.0, Ratio => 0.0, Index => 0),
      (Weight => 30.0, Value => 120.0, Ratio => 0.0, Index => 0)
    );
+   FKnap_Res : Float;
    
 begin
    --#######################################################
@@ -26,8 +27,23 @@ begin
       Put("Item " & Integer'Image(I) & ": ");
       Put("Weight=" & Float'Image(FKnap_Items(I).Weight));
       Put(", Value=" & Float'Image(FKnap_Items(I).Value));
+      Put(", Value=" & Float'Image(FKnap_Items(I).Ratio));
+      Put(", Value=" & Integer'Image(FKnap_Items(I).Index));
    New_Line;
    end loop;
    
+   Put_Line("After sort by ratio:");
+   FKnap_Res := Knapsack_Fractional(FKnap_Items, FKnap_Capacity);
+
+   for I in FKnap_Items'Range loop
+      Put("Item " & Integer'Image(I) & ": ");
+      Put("Weight=" & Float'Image(FKnap_Items(I).Weight));
+      Put(", Value=" & Float'Image(FKnap_Items(I).Value));
+      Put(", Value=" & Float'Image(FKnap_Items(I).Ratio));
+      Put(", Value=" & Integer'Image(FKnap_Items(I).Index));
+
+   New_Line;
+   end loop;
+
    New_Line;
 end Main;
