@@ -51,8 +51,9 @@ int main() {
   long long encrypted = mod_exp(msg, e, n);
   long long decrypted = mod_exp(encrypted, d, n);
 
-  printf("Original Msg: %d\n", msg);
-  printf("Encrypted Msg: %lld\nDecrypted Msg: %lld\n", encrypted, decrypted);
+  printf("Original: %d\n", msg);
+  printf("Encrypted: %lld\nDecrypted: %lld\n", encrypted, decrypted);
   
+  printf("Programmed by: Pierce Neupane\n");
   return 0;
 }

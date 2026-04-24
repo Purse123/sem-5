@@ -175,7 +175,6 @@ int main() {
     printf("\n");
   }
 
-  printf("===============================\n");
   // #######################################
   //          PREP. BEFORE ENCRYPT
   // #######################################
@@ -200,7 +199,6 @@ int main() {
   // #######################################
   encrypt(ctx, padded, encrypted);
   printf("Encrypted: %s\n", encrypted);
-  printf("===============================\n");
 
   // #######################################
   //          PREP. BEFORE DECRYPT
@@ -228,5 +226,6 @@ int main() {
   free(encrypted);
   free(decrypted);
   free(ctx);
+  printf("Programmed by: Pierce Neupane\n");  
   return 0;
 }

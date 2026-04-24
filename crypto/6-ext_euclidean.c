@@ -23,7 +23,6 @@ int main() {
   printf("Enter first and second number: ");
   scanf("%d%d", &a, &b);
   
-  printf("===================================\n");  
   extended_gcd(a, b, &gcd, &x, &y);
   
   printf("gcd(%d, %d) = %d\n", a, b, gcd);

@@ -1,0 +1,120 @@
+V "GNAT Lib v15"
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U greedy%b		greedy.adb		de2172a2 NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.concat_5%s	s-conca5.adb		s-conca5.ali
+Z system.img_flt%s	s-imgflt.ads		s-imgflt.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+
+U greedy%s		greedy.ads		65cddff9 EE NE OO PK IL
+
+D ada.ads		20260209135214 76789da1 ada%s
+D a-except.ads		20260209135214 e7970cd9 ada.exceptions%s
+D a-inteio.ads		20260209135214 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20260209135214 40018c65 ada.io_exceptions%s
+D a-stream.ads		20260209135214 17477cbd ada.streams%s
+D a-string.ads		20260209135214 90ac6797 ada.strings%s
+D a-sttebu.ads		20260209135214 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20260209135214 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20260209135214 fbca0ad5 ada.tags%s
+D a-textio.ads		20260209135214 34ef47de ada.text_io%s
+D a-tiinio.ads		20260209135214 76699c8f ada.text_io.integer_io%s
+D a-unccon.ads		20260209135214 0e9b276f ada.unchecked_conversion%s
+D greedy.ads		20260317011540 65cddff9 greedy%s
+D greedy.adb		20260323211700 79486321 greedy%b
+D interfac.ads		20260209135214 9111f9c1 interfaces%s
+D i-cstrea.ads		20260209135214 ffd01b9d interfaces.c_streams%s
+D system.ads		20260209135214 14286b0f system%s
+D s-conca2.ads		20260209135214 b5fb73f7 system.concat_2%s
+D s-conca4.ads		20260209135214 33f85f3e system.concat_4%s
+D s-conca5.ads		20260209135214 4099d1db system.concat_5%s
+D s-crtl.ads		20260209135214 beb39b9e system.crtl%s
+D s-exctab.ads		20260209135214 91bef6ef system.exception_table%s
+D s-ficobl.ads		20260209135214 dc5161d4 system.file_control_block%s
+D s-imagei.ads		20260209135214 5e131ce0 system.image_i%s
+D s-imager.ads		20260209135214 45c7157d system.image_r%s
+D s-imageu.ads		20260209135214 b0b50650 system.image_u%s
+D s-imgflt.ads		20260209135214 d12816b5 system.img_flt%s
+D s-imgint.ads		20260209135214 67e4edfb system.img_int%s
+D s-imguns.ads		20260209135214 c4e23690 system.img_uns%s
+D s-parame.ads		20260209135214 3597fc11 system.parameters%s
+D s-powflt.ads		20260209135214 a51ab9b8 system.powten_flt%s
+D s-putima.ads		20260209135214 17291fe4 system.put_images%s
+D s-secsta.ads		20260209135214 578279f5 system.secondary_stack%s
+D s-soflin.ads		20260209135214 5d88fdea system.soft_links%s
+D s-stache.ads		20260209135214 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20260209135214 1c9580f6 system.standard_library%s
+D s-stoele.ads		20260209135214 ccded4e8 system.storage_elements%s
+D s-traent.ads		20260209135214 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20260209135214 fa2a7f59 system.unsigned_types%s
+D s-valspe.ads		20260209135214 f810d31c system.val_spec%s
+D s-vaispe.ads		20260209135214 8280550e system.value_i_spec%s
+D s-vauspe.ads		20260209135214 89269ba5 system.value_u_spec%s
+D s-vs_int.ads		20260209135214 06b6b724 system.vs_int%s
+D s-vs_uns.ads		20260209135214 e7f47a27 system.vs_uns%s
+D s-wchcon.ads		20260209135214 d9032363 system.wch_con%s
+G a e
+G c Z s b [displayarr greedy 23 14 none]
+G c Z s b [get_step_count greedy 30 14 none]
+G c Z s b [reset_step_count greedy 33 14 none]
+G c Z s b [sortbyratio greedy 36 14 none]
+G c Z s b [knapsack_fractional greedy 42 13 none]
+G c Z s s [itemIP greedy 6 9 none]
+G c Z s s [int_arrayIP greedy 14 9 none]
+G c Z s s [item_arrayIP greedy 15 9 none]
+X 1 ada.ads
+18K9*Ada 22e8 14|1r6 1r23 2r6 2r31
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[11|46] 14|2w10 2r35
+X 10 a-textio.ads
+58K13*Text_IO 785e16 14|1w10 1r27
+89I12*Field{integer}
+515U14*Put 14|11s7 15s31 18s7
+565U14*Put_Line 14|5s38 54s13 62s13
+X 11 a-tiinio.ads
+85U14*Put 14|14s10[3|18]
+87i7 Width{10|89I12} 14|14r22[3|18]
+X 13 greedy.ads
+1K9*greedy 45E4 46l5 46e11 14|4b14 71l5 71t11
+6R9*Item 11e14 15r52 14|22r14
+7f7*Weight{float} 14|43r54 50r39 52r57 55r58 59r55
+8f7*Value{float} 14|43r37 53r51 60r52
+9f7*Ratio{float} 14|26r25 26r42 43m19
+10i7*Index{integer} 14|44m19 54r61 62r61
+14A9*Int_Array(integer)<integer> 23r32 14|9r32
+15A9*Item_Array(6R9)<integer> 36r40 42r48 14|21r40 35r48
+23U14*DisplayArr 23>26 14|9b14 19l8 19t18
+23a26 Arr{14A9} 14|9b26 13r16 14r14 15r17
+30U14*Get_Step_Count 14|5b14 6l8 6t22
+33U14*Reset_Step_Count 14|7b14 7l61 7t77
+36U14*SortByRatio 36=26 14|21b14 33l8 33t19 47s7
+36a26 Items{15A9} 14|21b26 24r16 24r31 25r28 26r16 26r33 27r24 28m16 28r28
+. 29m16
+42V13*Knapsack_Fractional{float} 42=34 42>60 14|35b13 69l8 69t27
+42a34 Items{15A9} 14|35b34 42r16 43m10 43r28 43r45 44m10 47m19 49r16 50r30
+. 52r48 53r42 54r52 55r49 59r46 60r43 62r52
+42f60 Capacity{float} 14|35b60 50r49 58r35
+45i4 Count_Step{integer} 14|5r73 7m40
+X 14 greedy.adb
+13i11 I{integer} 14r18 15r13
+22r7 Temp{13|6R9} 27m16 29r28
+24i11 I{integer} 25r19 26r22 27r30 28r22
+25i14 J{integer} 26r39 28r34 29r22
+36f7 Current_Weight{float} 50r13 52m13 52r31 58r46
+37f7 Final_Value{float} 53m13 53r28 60m13 60r28 68r14
+38f7 Remaining_Capacity{float} 58m13 59r25
+39f7 Fraction{float} 59m13 60r60 63r45
+42i11 I{integer} 43r16 43r34 43r51 44r16 44r28
+49i11 I{integer} 50r36 52r54 53r48 54r58 55r55 59r52 60r49 62r58
+

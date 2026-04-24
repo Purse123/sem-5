@@ -66,6 +66,7 @@ int main() {
   int root = find_primitive_root(p);
   if (root != -1) printf("Smallest primitive root of %u is: %d\n", p, root);
   else printf("No primitive root found for %u\n", p);
-  
+
+  printf("Programmed by: Pierce Neupane\n");
   return 0;
 }

@@ -65,9 +65,7 @@ int main() {
   int rail_state[NUM_RAIL] = {0};
   char cipher_text[MAX_LEN] = {0};
   
-  printf("=====================================\n");
   printf("Original plain text: %s\n", msg);
-  printf("=====================================\n");
 
   printf("Encrypt:\n");
   encrypt(msg, NUM_RAIL, rails, rail_state);
@@ -82,9 +80,9 @@ int main() {
   
   printf("Output cipher test: %s\n", cipher_text);
   
-  printf("=====================================\n");
   decrypt(msg, NUM_RAIL, rails, rail_state);
   printf("Decrypt: %s\n", msg);
   
+  printf("Programmed by: Pierce Neupane\n");  
   return 0;
 }

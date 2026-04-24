@@ -24,9 +24,9 @@ int main() {
   printf("Enter first and second number: ");
   scanf("%d%d", &a, &b);
  
-  printf("===================================\n");
   int result = gcd(a, b);
   printf("gcd(%d, %d) = %d\n", a, b, result);
-  
+
+  printf("Programmed by: Pierce Neupane\n");
   return 0;
 }

@@ -40,12 +40,6 @@ int main() {
     int temp = std::max(0, std::min(255, static_cast<int>(value)));
     pixel_matrix.push_back(temp);
   }
-
-  std::cout << "First pixel: " << std::endl
-	    << "B: " << pixel_matrix[0]
-	    << "B: " << pixel_matrix[1]
-	    << "B: " << pixel_matrix[2] << std::endl;
-
   // Now pixel_matrix is made now making it Gray scale, channel = 1
   std::vector<int> gray_matrix(total_pixels);
   
@@ -58,7 +52,7 @@ int main() {
       uchar R = pixel_matrix[idx + 2];
 
       // int intensity = (0.114f * B + 0.587f * G + 0.299f * R);
-      int intensity = (0.5f * B + 0.5f * G + 0.5f * R);
+      int intensity = (0.333f * B + 0.333f * G + 0.333f * R);
       
       gray_matrix[r * cols + c] = intensity;
     }
@@ -79,7 +73,7 @@ int main() {
   cv::imshow("mehh", gray_img);
 
   // save image 
-  cv::imwrite("grayscale_output.png", gray_img);
+  cv::imwrite("grayscale.png", gray_img);
   
   // #############################################
   //               Event Handler

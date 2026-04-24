@@ -41,14 +41,14 @@ int main() {
   long long Pub_B = mod_pow(g, Priv_B, p);
   
   printf("Public Parameters:\n");
-  printf("  p (prime) = %d\n", p);
-  printf("  g (generator) = %d\n", g);
+  printf("p = %d\n", p);
+  printf("g = %d\n", g);
   
   printf("\nKey Generation:\n");
   printf("Alice\nprivate key: %d\n", Priv_A);
   printf("public key: %lld\n", Pub_A);
   
-  printf("\nBob\nprivate key: %d\n", Priv_B);
+  printf("Bob\nprivate key: %d\n", Priv_B);
   printf("public key: %lld\n", Pub_B);
   
   // #######################################
@@ -57,9 +57,9 @@ int main() {
   long long KA = mod_pow(Pub_B, Priv_A, p);
   long long KB = mod_pow(Pub_A, Priv_B, p);
 
-  printf("\nShared Secret\n");
-  printf("Alice's computed key: %lld\n", KA);
-  printf("Bob's computed key:   %lld\n", KB);
+  printf("Shared Secret\n");
+  printf("Alice comp key: %lld\n", KA);
+  printf("Bob comp key:   %lld\n", KB);
 
   /* VERIFICATION */
   if (KA != KB) {
@@ -68,6 +68,7 @@ int main() {
   } else {
     printf("\n[SUCCESS] Shared secret established: %lld\n", KA);
   }
-  
+
+  printf("Programmed by: Pierce Neupane\n");
   return 0;
 }

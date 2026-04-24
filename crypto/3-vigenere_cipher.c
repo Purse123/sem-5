@@ -36,7 +36,8 @@ int main() {
   printf("Encrypted: %s\n", text);
   
   decrypt(text, key);
-  printf("Decrypteded: %s\n", text);
-  
+  printf("Decrypted: %s\n", text);
+
+  printf("Programmed by: Pierce Neupane\n");  
   return 0;
 }

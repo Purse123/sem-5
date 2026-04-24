@@ -23,6 +23,11 @@ q8: 8-diffi_helman_key_exchange.c
 	$(CC) $^ -o $@ $(CFLAGS)
 q9: 9-primtive_root.c
 	$(CC) $^ -o $@ $(CFLAGS) ${CLIB}
+q10: 10-vernam_cipher.c
+	$(CC) $^ -o $@ $(CFLAGS) ${CLIB} -g
+
+sha512: sha-512.c
+	$(CC) $^ -o $@ $(CFLAGS) ${CLIB}
 
 clean:
-	rm *~ q1 q2 q3 q4 q5 q6 q7 q8 q9
+	rm *~ q1 q2 q3 q4 q5 q6 q7 q8 q9 sha512

@@ -41,9 +41,12 @@ begin
       Put(", Value=" & Float'Image(FKnap_Items(I).Value));
       Put(", Value=" & Float'Image(FKnap_Items(I).Ratio));
       Put(", Value=" & Integer'Image(FKnap_Items(I).Index));
-
-   New_Line;
+      New_Line;
    end loop;
 
    New_Line;
+   Put("Maximum value achievable: ");
+   -- aft: no of digit after decimal
+   -- exp: no of digit in exponent
+   Put(FKnap_Res, Aft => 2, Exp => 0);
 end Main;
