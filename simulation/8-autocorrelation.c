@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 int main() {
   int n = 10, i, k = 2;
@@ -23,8 +24,9 @@ int main() {
   for(i = 0; i < n; i++)
     den += (r[i] - mean) * (r[i] - mean);
 
-  printf("\nAutocorrelation ≈ %f\n", num / den);
-
+  printf("\nAutocorrelation = %f\n", num / den);
+  float Z = (num / den) * sqrt(n);
+  printf("Z = %f\n", Z);
   printf("_______________________________\n");
   printf("Programmed by: Pierce Neupane\n");
 

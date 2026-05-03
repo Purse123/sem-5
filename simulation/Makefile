@@ -17,11 +17,11 @@ q6: 6-midSquare.c
 q7: 7-ks.c
 	${CC} $^ -o $@ ${CFlAGS} ${CLIBS}
 q8: 8-autocorrelation.c
-	${CC} $^ -o $@ ${CFlAGS} # ${CLIBS}
+	${CC} $^ -o $@ ${CFlAGS} ${CLIBS}
 q9: 9-chi_square.c
 	${CC} $^ -o $@ ${CFlAGS} # ${CLIBS}
 q10: 10-gap.c
-	${CC} $^ -o $@ ${CFlAGS} # ${CLIBS}
+	${CC} $^ -o $@ ${CFlAGS} ${CLIBS}
 
 clean:
 	rm *~ q1 q2 q3 q4 q5 q6 q7 q8 q9 q10
